@@ -1,0 +1,13 @@
+
+services:
+  cassandra:
+    image: cassandra:4.0
+    container_name: cassandra_container
+    ports:
+      - "9042:9042"
+    volumes:
+      - cassandra_data:/var/lib/cassandra
+    restart: unless-stopped
+
+volumes:
+  cassandra_data:
